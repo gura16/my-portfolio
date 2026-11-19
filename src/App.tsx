@@ -1,4 +1,5 @@
 import CircuitBackground from './components/CircuitBackground'
+import SkillsOrbit from './components/SkillsOrbit'
 import './App.css'
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
           <a href="#contact">Contact</a>
         </nav>
       </header>
-
+   <div className="hero-layout">
       <section className="hero-content">
         <p className="subtitle">FRONT-END DEVELOPER</p>
 
@@ -32,6 +33,8 @@ function App() {
           View My Projects
         </a>
       </section>
+      <SkillsOrbit />
+    </div>
     </main>
   )
 }

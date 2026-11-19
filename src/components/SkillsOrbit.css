@@ -1,0 +1,128 @@
+
+.skills-orbit {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px dashed rgba(103, 232, 249, 0.22);
+  border-radius: 50%;
+  animation: orbit-spin 28s linear infinite;
+}
+
+.orbit-outer {
+  width: 280px;
+  height: 280px;
+}
+
+.orbit-inner {
+  width: 170px;
+  height: 170px;
+  animation-direction: reverse;
+  animation-duration: 20s;
+}
+
+.orbit-item {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #14233d;
+  border: 1px solid #355579;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.15);
+}
+
+/* გარე ორბიტის აიქონები */
+
+.outer-one {
+  top: -24px;
+  left: calc(50% - 24px);
+}
+
+.outer-two {
+  top: calc(50% - 24px);
+  right: -24px;
+}
+
+.outer-three {
+  bottom: -24px;
+  left: calc(50% - 24px);
+}
+
+.outer-four {
+  top: calc(50% - 24px);
+  left: -24px;
+}
+
+/* შიდა ორბიტის აიქონები */
+
+.inner-one {
+  top: -24px;
+  left: calc(50% - 24px);
+}
+
+.inner-two {
+  bottom: 0;
+  right: -15px;
+}
+
+.inner-three {
+  bottom: 0;
+  left: -15px;
+}
+
+/* ცენტრალური ელემენტი */
+
+.orbit-center {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #172c4b;
+  border: 1px solid #4779aa;
+  box-shadow: 0 0 35px rgba(37, 99, 235, 0.3);
+  color: #67e8f9;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* მოძრაობა */
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* მაუსის მიტანისას მოძრაობის შეჩერება */
+
+.skills-orbit:hover .orbit {
+  animation-play-state: paused;
+}
+
+/* მობილური ვერსია */
+
+@media (max-width: 600px) {
+  .skills-orbit {
+    width: 260px;
+    height: 260px;
+    transform: scale(0.8);
+  }
+}
+
+/* შემცირებული ანიმაციის პარამეტრი */
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit {
+    animation: none;
+  }
+}
