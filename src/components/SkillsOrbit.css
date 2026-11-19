@@ -1,128 +1,206 @@
 
-.skills-orbit {
+/* ==========================
+   SOLAR SYSTEM
+========================== */
+
+.solar-system {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 620px;
+  height: 620px;
   flex-shrink: 0;
+
   display: grid;
   place-items: center;
+
+  isolation: isolate;
 }
 
-.orbit {
+/* ==========================
+   SUN
+========================== */
+
+.solar-sun {
   position: absolute;
-  border: 1px dashed rgba(103, 232, 249, 0.22);
+  z-index: 10;
+
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  animation: orbit-spin 28s linear infinite;
+
+  display: grid;
+  place-items: center;
+
+  background: radial-gradient(
+    circle at 35% 30%,
+    #67e8f9,
+    #2563eb 55%,
+    #172c4b
+  );
+
+  border: 1px solid #67e8f9;
+
+  box-shadow:
+    0 0 20px rgba(103, 232, 249, 0.5),
+    0 0 50px rgba(37, 99, 235, 0.35),
+    0 0 85px rgba(37, 99, 235, 0.15);
+
+  color: white;
+  font-size: 34px;
+  font-weight: 800;
 }
 
-.orbit-outer {
-  width: 280px;
-  height: 280px;
-}
+/* ==========================
+   ORBIT PATHS
+========================== */
 
-.orbit-inner {
-  width: 170px;
-  height: 170px;
-  animation-direction: reverse;
-  animation-duration: 20s;
-}
-
-.orbit-item {
+.planet-orbit {
   position: absolute;
-  width: 48px;
-  height: 48px;
+
+  width: var(--orbit-size);
+  height: var(--orbit-size);
+
+  border: 1px solid rgba(103, 232, 249, 0.18);
   border-radius: 50%;
-  background: #14233d;
+
+  pointer-events: none;
+}
+
+/* ==========================
+   ORBITAL MOVEMENT
+========================== */
+
+.planet-revolution {
+  position: absolute;
+  inset: 0;
+
+  animation: planet-revolve
+    var(--duration) linear infinite;
+
+  animation-delay: var(--delay);
+}
+
+/* ==========================
+   PLANET POSITION
+========================== */
+
+.planet-position {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 0;
+  height: 0;
+}
+
+/* ==========================
+   PLANETS
+========================== */
+
+.planet {
+  position: absolute;
+
+  top: -21px;
+  left: -21px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(20, 35, 61, 0.98);
   border: 1px solid #355579;
+
+  font-size: 24px;
+
+  box-shadow:
+    0 0 15px rgba(37, 99, 235, 0.3);
+
+  pointer-events: auto;
+}
+
+/* ==========================
+   ICON COUNTER-ROTATION
+========================== */
+
+.planet-icon {
   display: grid;
   place-items: center;
-  font-size: 25px;
-  box-shadow: 0 0 18px rgba(37, 99, 235, 0.15);
+
+  animation: planet-counter-revolve
+    var(--duration) linear infinite;
+
+  animation-delay: var(--delay);
 }
 
-/* გარე ორბიტის აიქონები */
+/* ==========================
+   HOVER EFFECT
+========================== */
 
-.outer-one {
-  top: -24px;
-  left: calc(50% - 24px);
+.planet:hover {
+  background: #1c3659;
+  border-color: #67e8f9;
+
+  box-shadow:
+    0 0 25px rgba(103, 232, 249, 0.45);
 }
 
-.outer-two {
-  top: calc(50% - 24px);
-  right: -24px;
-}
+/* ==========================
+   ORBIT ANIMATION
+========================== */
 
-.outer-three {
-  bottom: -24px;
-  left: calc(50% - 24px);
-}
+@keyframes planet-revolve {
+  from {
+    transform: rotate(0deg);
+  }
 
-.outer-four {
-  top: calc(50% - 24px);
-  left: -24px;
-}
-
-/* შიდა ორბიტის აიქონები */
-
-.inner-one {
-  top: -24px;
-  left: calc(50% - 24px);
-}
-
-.inner-two {
-  bottom: 0;
-  right: -15px;
-}
-
-.inner-three {
-  bottom: 0;
-  left: -15px;
-}
-
-/* ცენტრალური ელემენტი */
-
-.orbit-center {
-  width: 74px;
-  height: 74px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #172c4b;
-  border: 1px solid #4779aa;
-  box-shadow: 0 0 35px rgba(37, 99, 235, 0.3);
-  color: #67e8f9;
-  font-size: 26px;
-  font-weight: bold;
-}
-
-/* მოძრაობა */
-
-@keyframes orbit-spin {
   to {
     transform: rotate(360deg);
   }
 }
 
-/* მაუსის მიტანისას მოძრაობის შეჩერება */
+/* ==========================
+   ICON COUNTER-ROTATION
+========================== */
 
-.skills-orbit:hover .orbit {
-  animation-play-state: paused;
-}
+@keyframes planet-counter-revolve {
+  from {
+    transform: rotate(0deg);
+  }
 
-/* მობილური ვერსია */
-
-@media (max-width: 600px) {
-  .skills-orbit {
-    width: 260px;
-    height: 260px;
-    transform: scale(0.8);
+  to {
+    transform: rotate(-360deg);
   }
 }
 
-/* შემცირებული ანიმაციის პარამეტრი */
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+@media (max-width: 1100px) {
+  .solar-system {
+    transform: scale(0.85);
+    margin: -45px;
+  }
+}
+
+@media (max-width: 600px) {
+  .solar-system {
+    transform: scale(0.5);
+    margin: -155px;
+  }
+}
+
+/* ==========================
+   ACCESSIBILITY
+========================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .orbit {
+  .planet-revolution,
+  .planet-icon {
     animation: none;
   }
 }
