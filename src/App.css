@@ -1,0 +1,102 @@
+
+#root {
+  min-height: 100vh;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: radial-gradient(
+    ellipse at 80% 35%,
+    #142447 0%,
+    #080d19 65%
+  );
+  color: white;
+  padding: 30px 8%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar a {
+  color: #aab8ce;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.hero-content {
+  max-width: 750px;
+  margin-top: 15vh;
+}
+
+.subtitle {
+  color: #67e8f9;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.hero-content h1 {
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1.15;
+  margin: 20px 0;
+}
+
+.hero-content h1 span {
+  display: block;
+  color: #91a4c3;
+}
+
+.description {
+  max-width: 520px;
+  color: #aab8ce;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.primary-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 28px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 24px 6%;
+  }
+
+  .navbar {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .navbar nav {
+    gap: 15px;
+  }
+
+  .hero-content {
+    margin-top: 12vh;
+  }
+}
+.navbar,
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
