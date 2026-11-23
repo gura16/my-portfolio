@@ -1,6 +1,7 @@
 
 import CircuitBackground from './components/CircuitBackground'
 import SkillsOrbit from './components/SkillsOrbit'
+import Projects from './components/Projects'
 import './App.css'
 
 function App() {
@@ -112,6 +113,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* PROJECTS SECTION */}
+      <Projects />
     </main>
   )
 }
