@@ -1,4 +1,8 @@
 
+/* ==========================
+   PROJECTS SECTION
+========================== */
+
 .projects-section {
   position: relative;
   padding: 110px 8%;
@@ -36,6 +40,10 @@
   line-height: 1.8;
 }
 
+/* ==========================
+   PROJECT CARDS
+========================== */
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -43,6 +51,8 @@
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   overflow: hidden;
   border-radius: 16px;
@@ -60,9 +70,12 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
+/* PROJECT IMAGE */
+
 .project-image {
   width: 100%;
   aspect-ratio: 16 / 10;
+  flex-shrink: 0;
   overflow: hidden;
   background: #0a1930;
 }
@@ -74,7 +87,12 @@
   display: block;
 }
 
+/* PROJECT DETAILS */
+
 .project-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 25px;
 }
 
@@ -100,6 +118,8 @@
   min-height: 100px;
 }
 
+/* PROJECT TECHNOLOGIES */
+
 .project-technologies {
   display: flex;
   flex-wrap: wrap;
@@ -115,6 +135,81 @@
   color: #a5dff2;
   font-size: 12px;
 }
+
+/* ==========================
+   PROJECT BUTTONS
+========================== */
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 25px;
+}
+
+.github-button,
+.demo-button {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* SOURCE CODE BUTTON */
+
+.github-button {
+  color: #67e8f9;
+  border: 1px solid rgba(103, 232, 249, 0.4);
+  background: transparent;
+}
+
+.github-button:not(.disabled-link):hover {
+  background: rgba(103, 232, 249, 0.1);
+  transform: translateY(-2px);
+}
+
+/* LIVE DEMO BUTTON */
+
+.demo-button {
+  color: #ffffff;
+  background: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.demo-button:not(.disabled-link):hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* DISABLED BUTTONS */
+
+.disabled-link {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+.github-button:focus-visible,
+.demo-button:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 4px;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
 
 @media (max-width: 1000px) {
   .projects-grid {
@@ -137,5 +232,27 @@
 
   .project-details > p {
     min-height: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .project-links {
+    flex-direction: column;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .github-button,
+  .demo-button {
+    transition: none;
+  }
+
+  .project-card:hover,
+  .github-button:not(.disabled-link):hover,
+  .demo-button:not(.disabled-link):hover {
+    transform: none;
   }
 }

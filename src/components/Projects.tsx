@@ -10,6 +10,8 @@ const projects = [
       'A responsive entertainment platform featuring movie and TV show discovery, search functionality, and personal bookmarks.',
     technologies: ['React', 'JavaScript', 'CSS'],
     image: '/projects/entertainment.png',
+    github: '',
+    demo: '',
   },
   {
     id: '02',
@@ -19,6 +21,8 @@ const projects = [
       'A GitHub profile finder that retrieves user information through an API, with error handling and dark/light themes.',
     technologies: ['React', 'TypeScript', 'Axios'],
     image: '/projects/github-search.png',
+    github: '',
+    demo: '',
   },
   {
     id: '03',
@@ -28,6 +32,8 @@ const projects = [
       'A customisable productivity timer featuring work and break sessions, colour themes, and font preferences.',
     technologies: ['React', 'TypeScript', 'CSS'],
     image: '/projects/pomodoro.png',
+    github: '',
+    demo: '',
   },
 ]
 
@@ -37,9 +43,11 @@ function Projects() {
       <div className="projects-container">
         <div className="projects-heading">
           <p className="subtitle">MY WORK</p>
+
           <h2>
             Featured <span>Projects.</span>
           </h2>
+
           <p className="projects-intro">
             A selection of applications I've built while
             developing my front-end skills.
@@ -70,6 +78,38 @@ function Projects() {
                   {project.technologies.map((tech) => (
                     <span key={tech}>{tech}</span>
                   ))}
+                </div>
+
+                <div className="project-links">
+                  {project.github ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="github-button"
+                    >
+                      Source Code
+                    </a>
+                  ) : (
+                    <span className="github-button disabled-link">
+                      Source Code
+                    </span>
+                  )}
+
+                  {project.demo ? (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="demo-button"
+                    >
+                      Live Demo ↗
+                    </a>
+                  ) : (
+                    <span className="demo-button disabled-link">
+                      Live Demo ↗
+                    </span>
+                  )}
                 </div>
               </div>
             </article>
