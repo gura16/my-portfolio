@@ -282,3 +282,27 @@
     padding: 45px 5% 70px;
   }
 }
+
+/* CONTACT AND FOOTER */
+.contact-section { padding: 110px 8%; background: #080f20; color: #fff; }
+.contact-container { max-width: 1200px; margin: 0 auto; }
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.contact-heading h2 { font-size: clamp(36px, 5vw, 54px); margin: 12px 0 24px; }
+.contact-heading h2 span { color: #67e8f9; }
+.contact-heading > p:not(.subtitle) { color: #a7b4ca; line-height: 1.8; max-width: 480px; }
+.contact-heading .primary-button { margin-top: 20px; }
+.contact-links { display: grid; gap: 16px; min-width: 0; }
+.contact-card { display: flex; flex-direction: column; gap: 10px; padding: 24px; background: #14233d; border: 1px solid rgba(103,232,249,.14); border-radius: 14px; color: #fff; text-decoration: none; overflow-wrap: anywhere; transition: border-color .3s, transform .3s; }
+.contact-card:hover { border-color: #67e8f9; transform: translateY(-3px); }
+.contact-card span { color: #67e8f9; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+.site-footer { background: #080f20; border-top: 1px solid rgba(103,232,249,.14); color: #a7b4ca; padding: 30px 8%; }
+.footer-container { max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+.footer-container a { color: #a7b4ca; text-decoration: none; }
+.footer-container a:hover { color: #67e8f9; }
+.footer-container .footer-brand { color: #fff; font-weight: 800; letter-spacing: 1px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 20px; }
+.footer-container small { font-size: 13px; }
+.contact-section a:focus-visible, .site-footer a:focus-visible { outline: 2px solid #67e8f9; outline-offset: 4px; }
+@media (max-width: 850px) { .contact-section { padding: 75px 6%; } .contact-layout { grid-template-columns: 1fr; gap: 32px; } }
+@media (max-width: 600px) { .footer-container { flex-direction: column; text-align: center; } .contact-card { padding: 20px; } }
+@media (prefers-reduced-motion: reduce) { .contact-card { transition: none; } .contact-card:hover { transform: none; } }
