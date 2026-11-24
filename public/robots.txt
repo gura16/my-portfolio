@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://my-portfolio-lilac-sigma-17.vercel.app/sitemap.xml
