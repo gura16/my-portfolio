@@ -306,3 +306,8 @@
 @media (max-width: 850px) { .contact-section { padding: 75px 6%; } .contact-layout { grid-template-columns: 1fr; gap: 32px; } }
 @media (max-width: 600px) { .footer-container { flex-direction: column; text-align: center; } .contact-card { padding: 20px; } }
 @media (prefers-reduced-motion: reduce) { .contact-card { transition: none; } .contact-card:hover { transform: none; } }
+
+/* Prevent narrow grid tracks from forcing horizontal overflow. */
+.contact-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 850px) { .contact-layout { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 360px) { .navbar nav { gap: 16px; } .hero-content h1 { font-size: 36px; } }
