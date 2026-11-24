@@ -204,3 +204,8 @@
     animation: none;
   }
 }
+
+/* Keep the outer orbit within narrow mobile viewports. */
+@media (max-width: 360px) {
+  .solar-system { transform: scale(0.43); margin: -177px; }
+}
