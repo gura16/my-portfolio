@@ -10,8 +10,8 @@ const projects = [
       'A responsive entertainment platform featuring movie and TV show discovery, search functionality, and personal bookmarks.',
     technologies: ['React', 'JavaScript', 'CSS'],
     image: '/projects/entertainment.png',
-    github: '',
-    demo: '',
+    github: 'https://github.com/gura16/entertainment-web-app',
+    demo: 'https://entertainment-web-app-swart.vercel.app/home',
   },
   {
     id: '02',
@@ -21,8 +21,8 @@ const projects = [
       'A GitHub profile finder that retrieves user information through an API, with error handling and dark/light themes.',
     technologies: ['React', 'TypeScript', 'Axios'],
     image: '/projects/github-search.png',
-    github: '',
-    demo: '',
+    github: 'https://github.com/gura16/github-user-search-app',
+    demo: 'https://github-user-search-app-sigma-eight.vercel.app',
   },
   {
     id: '03',
@@ -32,8 +32,8 @@ const projects = [
       'A customisable productivity timer featuring work and break sessions, colour themes, and font preferences.',
     technologies: ['React', 'TypeScript', 'CSS'],
     image: '/projects/pomodoro.png',
-    github: '',
-    demo: '',
+    github: 'https://github.com/gura16/pomodoro-app',
+    demo: 'https://pomodoro-app-sigma-five.vercel.app',
   },
 ]
 
