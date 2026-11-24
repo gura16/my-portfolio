@@ -6,6 +6,7 @@ import './App.css'
 
 function App() {
   return (
+    <>
     <main>
       {/* HERO SECTION */}
       <section className="hero" id="home">
@@ -116,7 +117,46 @@ function App() {
 
       {/* PROJECTS SECTION */}
       <Projects />
+
+      {/* CONTACT SECTION */}
+      <section className="contact-section" id="contact" aria-labelledby="contact-title">
+        <div className="contact-container contact-layout">
+          <div className="contact-heading">
+            <p className="subtitle">GET IN TOUCH</p>
+            <h2 id="contact-title">Let's work <span>together.</span></h2>
+            <p>I'm open to front-end development opportunities and freelance projects. Have a project in mind? I'd love to hear from you.</p>
+            <a className="primary-button" href="mailto:gkvaxadze@gmail.com">Send me an email</a>
+          </div>
+          <div className="contact-links">
+            <a className="contact-card" href="mailto:gkvaxadze@gmail.com">
+              <span>EMAIL</span>
+              <strong>gkvaxadze@gmail.com</strong>
+            </a>
+            <a className="contact-card" href="tel:+995555173959">
+              <span>PHONE</span>
+              <strong>+995 555 17 39 59</strong>
+            </a>
+            <a className="contact-card" href="https://github.com/gura16" target="_blank" rel="noopener noreferrer">
+              <span>GITHUB</span>
+              <strong>github.com/gura16 ↗</strong>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
+    <footer className="site-footer">
+      <div className="footer-container">
+        <a className="footer-brand" href="#home">GURAM.DEV</a>
+        <nav className="footer-nav" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="https://github.com/gura16" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+        <small>© {new Date().getFullYear()} Guram. All rights reserved.</small>
+      </div>
+    </footer>
+    </>
   )
 }
 
